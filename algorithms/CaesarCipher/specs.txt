@@ -1,0 +1,2 @@
+Hello, this is a placeholder for properties about the Caesar cipher.
+They will be read from a program.

@@ -5,5 +5,17 @@ cmake_minimum_required (VERSION 3.8)
 
 project ("CaesarCipher")
 
+set(ALGO_DIRECTORY_NAME CaesarCipher)
+
+#Place the executable in the /bin directory
+#set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
+set(ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib/algorithms/${ALGO_DIRECTORY_NAME})
+set(LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib/algorithms/${ALGO_DIRECTORY_NAME})
+set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/algorithms/${ALGO_DIRECTORY_NAME})
+set(EXECUTABLE_OUTPUT_PATH ${RUNTIME_OUTPUT_DIRECTORY})
+
 # Include sub-projects.
-add_subdirectory ("CaesarCipher")
+add_subdirectory ("src")
+
+#Copy specs.txt to the build folder
+configure_file(specs.txt ${RUNTIME_OUTPUT_DIRECTORY}/specs.txt COPYONLY)
