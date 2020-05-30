@@ -8,7 +8,6 @@ project ("CaesarCipher")
 set(ALGO_DIRECTORY_NAME CaesarCipher)
 
 #Place the executable in the /bin directory
-#set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
 set(ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib/algorithms/${ALGO_DIRECTORY_NAME})
 set(LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib/algorithms/${ALGO_DIRECTORY_NAME})
 set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/algorithms/${ALGO_DIRECTORY_NAME})

@@ -6,7 +6,6 @@ cmake_minimum_required (VERSION 3.8)
 project ("USAT")
 
 #Place the executable in the /bin directory
-#set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
 set(ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
