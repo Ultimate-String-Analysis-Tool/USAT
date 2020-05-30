@@ -21,3 +21,4 @@ build/
 
 #Binaries
 src/USAT
+bin/
