@@ -6,4 +6,4 @@ cmake_minimum_required (VERSION 3.8)
 project ("USAT")
 
 # Include sub-projects.
-add_subdirectory ("USAT")
+add_subdirectory ("src")
