@@ -4,7 +4,7 @@ The Ultimate String Analysis Tool is **yet to be** be a cross-platform suite of 
 Every type of string, whether that's an encoding for a file, a hash, or an encrypted message, has its own characteristics. For example, 
 we can assume that a simple Caesar cipher would only contain alphanumeric text with whitespace and common symbols like punctuation marks. That "fingerprint" can be stored in a file that can then be used to determine if an arbitrary string could be a Caesar cipher.
 
-By combining the Caesar cipher's fingerprint with a standalone application that encodes and decodes arbitrary text, an automated workflow can be created to find all plausible interpretations of a string, and, if any interpretation is an encoding or encryption, attempt to decod or decrypt the string.
+By combining the Caesar cipher's fingerprint with a standalone application that encodes and decodes arbitrary text, an automated workflow can be created to find all plausible interpretations of a string, and, if any interpretation is an encoding or encryption, attempt to decode or decrypt the string.
 
 ## Build
 This project currently builds with CMake and no additional dependencies or parameters. Build it as you would any other CMake project.
