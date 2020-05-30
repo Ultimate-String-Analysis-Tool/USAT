@@ -7,3 +7,5 @@ project ("USAT")
 
 # Include sub-projects.
 add_subdirectory ("src")
+add_subdirectory("algorithms")
+
