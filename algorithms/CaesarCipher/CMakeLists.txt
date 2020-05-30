@@ -3,8 +3,7 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
-project ("USAT")
+project ("CaesarCipher")
 
 # Include sub-projects.
-add_subdirectory ("src")
-add_subdirectory("algorithms")
+add_subdirectory ("CaesarCipher")
