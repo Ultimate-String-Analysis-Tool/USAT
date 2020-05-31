@@ -7,3 +7,13 @@ cmake_minimum_required (VERSION 3.8)
 add_executable (USAT "USAT.cpp" "USAT.h" "Algorithm.cpp" "Algorithm.hpp")
 
 # TODO: Add tests and install targets if needed.
+# libconfig
+if(CMAKE_HOST_WIN32)
+    set(libname "libconfig")
+else()
+    set(libname "config")
+endif()
+
+target_include_directories(USAT PRIVATE ${CMAKE_SOURCE_DIR}/extern/libconfig/lib)
+
+target_link_libraries(USAT ${libname}++ )
