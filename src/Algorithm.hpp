@@ -11,12 +11,12 @@ using namespace libconfig;
 
 
 class Algorithm{
-    Config config;
 
     public:
         Algorithm();
         void execute();
     private:
         int populateSpecsFromFile();
+        Config config;
 
 };
