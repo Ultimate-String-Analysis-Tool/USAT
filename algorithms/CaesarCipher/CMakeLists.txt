@@ -17,4 +17,4 @@ set(EXECUTABLE_OUTPUT_PATH ${RUNTIME_OUTPUT_DIRECTORY})
 add_subdirectory ("src")
 
 #Copy specs.txt to the build folder
-configure_file(specs.txt ${RUNTIME_OUTPUT_DIRECTORY}/specs.txt COPYONLY)
+configure_file(specs.cfg ${RUNTIME_OUTPUT_DIRECTORY}/specs.txt COPYONLY)
