@@ -16,7 +16,7 @@ int Algorithm::populateSpecsFromFile() {
     // Read the file. If there is an error, report it and exit.
     try
     {
-        config.readFile("example.cfg");
+        config.readFile("algorithms/CaesarCipher/specs.cfg");
     }
     catch(const FileIOException &fioex)
     {
@@ -29,4 +29,19 @@ int Algorithm::populateSpecsFromFile() {
                     << " - " << pex.getError() << endl;
         return(EXIT_FAILURE);
     }
+
+    cout << "Load finished" << endl;
+
+    // Get the algorithm name.
+    try
+    {
+        string name = config.lookup("name");
+        cout << "Algorithm name: " << name << endl << endl;
+    }
+    catch(const SettingNotFoundException &nfex)
+    {
+        cerr << "No 'name' setting in configuration file." << endl;
+    }
+    
+    return 0;
 }

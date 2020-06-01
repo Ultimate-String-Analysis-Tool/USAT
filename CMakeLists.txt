@@ -34,6 +34,12 @@ if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
     endif()
 endif()
 
+
+#Compile libconfig
 if(NOT EXISTS "${PROJECT_SOURCE_DIR}/extern/libconfig/CMakeLists.txt")
     message(FATAL_ERROR "The submodule libconfig was not downloaded! GIT_SUBMODULE was turned off or failed. Please update submodules and try again.")
 endif()
+
+set(BUILD_EXAMPLES OFF CACHE BOOL "Disable examples for Libconfig" FORCE)
+set(BUILD_TESTS OFF CACHE BOOL "Disable tests for Libconfig" FORCE)
+add_subdirectory(${PROJECT_SOURCE_DIR}/extern/libconfig/)
