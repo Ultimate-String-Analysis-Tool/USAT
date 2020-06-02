@@ -9,7 +9,7 @@ By combining the Caesar cipher's fingerprint with a standalone application that 
 ## Documentation
 * Building the project from source code (Coming soon)
 * Developing USAT (Coming soon)
-* [Developing Algorithms](about/Algorithms.md)
+* [Developing Algorithms](docs/Algorithms.md)
 
 ## Build
 This project currently builds with CMake and no additional dependencies or parameters. Build it as you would any other CMake project.
