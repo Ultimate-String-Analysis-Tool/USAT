@@ -6,6 +6,11 @@ we can assume that a simple Caesar cipher would only contain alphanumeric text w
 
 By combining the Caesar cipher's fingerprint with a standalone application that encodes and decodes arbitrary text, an automated workflow can be created to find all plausible interpretations of a string, and, if any interpretation is an encoding or encryption, attempt to decode or decrypt the string.
 
+## Documentation
+* Building the project from source code (Coming soon)
+* Developing USAT (Coming soon)
+* [Developing Algorithms](about/Algorithms.md)
+
 ## Build
 This project currently builds with CMake and no additional dependencies or parameters. Build it as you would any other CMake project.
 
@@ -15,3 +20,4 @@ Some build tools are also available:
 
 ## Contributions
 This project is in its early stage of development, but contributions are always welcome, from bug fixes to new tools and even low-level framework ideas and suggestions.
+
