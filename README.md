@@ -6,6 +6,10 @@ we can assume that a simple Caesar cipher would only contain alphanumeric text w
 
 By combining the Caesar cipher's fingerprint with a standalone application that encodes and decodes arbitrary text, an automated workflow can be created to find all plausible interpretations of a string, and, if any interpretation is an encoding or encryption, attempt to decode or decrypt the string.
 
+# TODO
+Visual Studio does not place DLLs in the correct folder, causing the execution of the program
+on Windows to fail. Find a way to explicitly set the output directory of all libraries.
+
 ## Documentation
 * Building the project from source code (Coming soon)
 * Developing USAT (Coming soon)
