@@ -7,7 +7,6 @@ cmake_minimum_required (VERSION 3.8)
 add_executable (CaesarCipher "CaesarCipher.cpp" "CaesarCipher.h")
 
 #Manually place the CaesarCipher binary into its own folder under bin/algorithms/
-message("Caesar Cipher runtime output directory: " ${ALGO_FULL_DIRECTORY})
 # First for the generic no-config case (e.g. with mingw)
 set_target_properties(CaesarCipher PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${ALGO_FULL_DIRECTORY})
 # Second, for multi-config builds (e.g. msvc)
