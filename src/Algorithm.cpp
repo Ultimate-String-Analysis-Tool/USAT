@@ -2,9 +2,11 @@
 
 #include "Algorithm.hpp"
 
+
+
 void Algorithm::execute(){
     using namespace std;
-    cout << "This algorithm has been executed" << endl;
+    info("This algorithm has been executed");
     
 }
 
@@ -35,13 +37,21 @@ int Algorithm::populateSpecsFromFile() {
     // Get the algorithm name.
     try
     {
-        string name = config.lookup("name");
+        name = (const char*)config.lookup("name");
         cout << "Algorithm name: " << name << endl << endl;
     }
     catch(const SettingNotFoundException &nfex)
     {
         cerr << "No 'name' setting in configuration file." << endl;
+        return(EXIT_FAILURE);
     }
     
+    //Check if this algorithm is an Encryption
+    if(config.exists("encryption")){
+
+    }
+
+
+
     return 0;
 }

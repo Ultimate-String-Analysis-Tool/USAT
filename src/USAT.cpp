@@ -1,7 +1,7 @@
 ﻿// USAT.cpp : Defines the entry point for the application.
 //
 
-#include "USAT.h"
+#include "USAT.hpp"
 
 #include "Algorithm.hpp"
 
