@@ -5,11 +5,6 @@ cmake_minimum_required (VERSION 3.8)
 
 project ("USAT")
 
-#Place the executable in the /bin directory
-set(ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(EXECUTABLE_OUTPUT_PATH ${RUNTIME_OUTPUT_DIRECTORY})
 
 
 # Include sub-projects.
@@ -18,7 +13,7 @@ add_subdirectory("algorithms")
 
 # Include external libraries
 
-#Include submodules
+# Include submodules
 find_package(Git QUIET)
 if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
 # Update submodules as needed
@@ -35,11 +30,16 @@ if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
 endif()
 
 
-#Compile libconfig
+# Add libconfig to the project
 if(NOT EXISTS "${PROJECT_SOURCE_DIR}/extern/libconfig/CMakeLists.txt")
     message(FATAL_ERROR "The submodule libconfig was not downloaded! GIT_SUBMODULE was turned off or failed. Please update submodules and try again.")
 endif()
-
 set(BUILD_EXAMPLES OFF CACHE BOOL "Disable examples for Libconfig" FORCE)
 set(BUILD_TESTS OFF CACHE BOOL "Disable tests for Libconfig" FORCE)
 add_subdirectory(${PROJECT_SOURCE_DIR}/extern/libconfig/)
+
+# Add spdlog to the project
+if(NOT EXISTS "${PROJECT_SOURCE_DIR}/extern/spdlog/CMakeLists.txt")
+    message(FATAL_ERROR "The submodule spdlog was not downloaded! GIT_SUBMODULE was turned off or failed. Please update submodules and try again.")
+endif()
+add_subdirectory(${PROJECT_SOURCE_DIR}/extern/spdlog/)

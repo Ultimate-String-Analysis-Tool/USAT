@@ -1,3 +1,6 @@
 [submodule "extern/libconfig"]
 	path = extern/libconfig
 	url = https://github.com/hyperrealm/libconfig
+[submodule "extern/spdlog"]
+	path = extern/spdlog
+	url = https://github.com/gabime/spdlog.git
