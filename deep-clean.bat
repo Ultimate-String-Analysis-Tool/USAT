@@ -10,8 +10,7 @@ where /q git
 IF ERRORLEVEL 1 (
 	ECHO Couldn't find Git. Aborting.
 	exit 1
-)  
-ELSE (
+) ELSE (
 	ECHO Git found. Cleaning. 
 )
 
@@ -20,4 +19,3 @@ git clean -xfd
 git submodule foreach --recursive git clean -xfd
 git reset --hard
 git submodule foreach --recursive git reset --hard
-git submodule update --init --recursive
