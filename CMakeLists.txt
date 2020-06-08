@@ -6,7 +6,7 @@ cmake_minimum_required (VERSION 3.8)
 project ("USAT")
 
 # Create colors
-if($ENV{SHELL})
+if(NOT WIN32)
   string(ASCII 27 Esc)
   set(ColorReset "${Esc}[m")
   set(ColorBold  "${Esc}[1m")
