@@ -20,4 +20,4 @@ message("    ${Blue}Runtime output directory: ${ALGO_FULL_DIRECTORY}${ColorReset
 add_subdirectory ("src")
 
 # Copy specs.txt to the build folder
-configure_file(specs.cfg ${ALGO_FULL_DIRECTORY}/specs.txt COPYONLY)
+configure_file(specs.cfg ${ALGO_FULL_DIRECTORY}/specs.cfg COPYONLY)

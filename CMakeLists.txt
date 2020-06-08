@@ -6,7 +6,7 @@ cmake_minimum_required (VERSION 3.8)
 project ("USAT")
 
 # Create colors
-if(NOT WIN32)
+if($ENV{SHELL})
   string(ASCII 27 Esc)
   set(ColorReset "${Esc}[m")
   set(ColorBold  "${Esc}[1m")
@@ -25,6 +25,22 @@ if(NOT WIN32)
   set(BoldCyan    "${Esc}[1;36m")
   set(BoldWhite   "${Esc}[1;37m")
 endif()
+
+
+#Manually place all binaries into a folder under bin/
+set(USAT_FULL_DIRECTORY ${CMAKE_HOME_DIRECTORY}/bin/)
+message("${Green}Output directory: ${USAT_FULL_DIRECTORY}${ResetColor}")
+# First for the generic no-config case (e.g. with mingw)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY  ${USAT_FULL_DIRECTORY})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY  ${USAT_FULL_DIRECTORY})
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY  ${USAT_FULL_DIRECTORY})
+# Second, for multi-config builds (e.g. msvc)
+foreach( OUTPUTCONFIG ${CMAKE_CONFIGURATION_TYPES} )
+    string( TOUPPER ${OUTPUTCONFIG} OUTPUTCONFIG )
+    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_${OUTPUTCONFIG} ${USAT_FULL_DIRECTORY})
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_${OUTPUTCONFIG} ${USAT_FULL_DIRECTORY})
+    set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_${OUTPUTCONFIG} ${USAT_FULL_DIRECTORY})
+endforeach( OUTPUTCONFIG CMAKE_CONFIGURATION_TYPES )
 
 # Include sub-projects.
 add_subdirectory ("src")
