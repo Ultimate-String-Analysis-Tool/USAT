@@ -4,12 +4,13 @@
 BLUE="\033[1;34m" # light blue
 NC="\033[0m" # No Color
 #Attempt to update tools
+#TODO support this procedure on Pacman and Yum
 echo -e "${BLUE}Attempting to update tools via apt${NC}"
 if ! [ -x "$(command -v apt-get)" ]; then
   echo "Apt is not installed on this machine. Skipping tool update" >&2
   exit 1
 else
-  sudo apt-get update -qq
+  sudo apt-get update -q
   echo -e "${BLUE}Attempting to update/install CMake, Make, and GCC${NC}"
   sudo apt-get install git make cmake gcc -y -f
 fi
@@ -23,7 +24,7 @@ else
   git submodule update --init --recursive
 fi
 
-#Actualy build the code
+#Actually build the code
 echo -e "${BLUE}Generating Make scripts${NC}"
 cmake .
 if ! [ $? -eq 0 ]; then
@@ -42,4 +43,6 @@ if ! [ $? -eq 0 ]; then
   echo "If no such Github issue exists, please submit a new issue containing the output of this script." >&2
   exit 2
 fi
-echo -e "${BLUE}Build complete!${NC}"
+echo -e "${BLUE}Build complete. Yay!${NC}"
+echo -e "${BLUE}The USAT executable is in the bin/ directory.${NC}"
+echo -e "${BLUE}Command: bin/USAT${NC}"
