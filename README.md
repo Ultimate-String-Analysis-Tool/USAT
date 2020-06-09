@@ -11,7 +11,7 @@ Visual Studio does not place DLLs in the correct folder, causing the execution o
 on Windows to fail. Find a way to explicitly set the output directory of all libraries.
 
 ## Documentation
-* Building the project from source code (Coming soon)
+* [Building the project from source code](docs/Build.md)
 * Developing USAT (Coming soon)
 * [Developing Algorithms](docs/Algorithms.md)
 
