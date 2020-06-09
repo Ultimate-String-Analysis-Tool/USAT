@@ -1,4 +1,8 @@
 # Building from the Source Code
+## Table of Contents
+* [Building on Linux](#linux)
+* [Building on Windows](#windows)
+
 
 ## Linux
 USAT can be built Linux devices with CMake, Make, and GCC, and is tested with such a configuration.
